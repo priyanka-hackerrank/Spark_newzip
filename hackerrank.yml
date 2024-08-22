@@ -1,0 +1,18 @@
+version: 1.0
+configuration:
+    has_webserver: false
+    readonly_paths:
+        - src/test/*
+    scoring:
+        command: sbt clean test
+        files:
+            - target/test-reports/TEST-com.hackerrank.MainTest.xml
+    ide_config:
+        default_open_files:
+            - build.sbt
+            - src/main/scala/com/hackerrank/Main.scala
+            - src/test/scala/com/hackerrank/MainTest.scala
+        project_menu:
+            run: sbt run
+            install: sbt compile
+            test: sbt test
